@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"password\\\\|secret\\\\|api.key\\\\|token\\\\|credential\" E:TestSuiteplaywright-qa-portfolioplaywright-qa-portfolio --include=*.ts --include=*.js --include=*.json --include=*.env* --exclude-dir=node_modules --exclude-dir=.idea)",
+      "Bash(grep -r password.*= E:TestSuiteplaywright-qa-portfolioplaywright-qa-portfolio/test-data E:TestSuiteplaywright-qa-portfolioplaywright-qa-portfolio/tests E:TestSuiteplaywright-qa-portfolioplaywright-qa-portfolio/pages --include=*.ts)",
+      "Bash(wc -l \"E:\\\\TestSuite\\\\playwright-qa-portfolio\\\\playwright-qa-portfolio/tests/e2e\"/*.spec.ts \"E:\\\\TestSuite\\\\playwright-qa-portfolio\\\\playwright-qa-portfolio/tests/api\"/*.spec.ts \"E:\\\\TestSuite\\\\playwright-qa-portfolio\\\\playwright-qa-portfolio/pages\"/*.ts \"E:\\\\TestSuite\\\\playwright-qa-portfolio\\\\playwright-qa-portfolio/fixtures\"/*.ts)",
+      "Bash(grep -c \"test\\(\" \"E:\\\\TestSuite\\\\playwright-qa-portfolio\\\\playwright-qa-portfolio/tests/e2e\"/*.spec.ts \"E:\\\\TestSuite\\\\playwright-qa-portfolio\\\\playwright-qa-portfolio/tests/api\"/*.spec.ts)"
+    ]
+  }
+}
