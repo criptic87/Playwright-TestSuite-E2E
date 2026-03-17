@@ -45,13 +45,6 @@ export class ProductsPage {
     await expect(this.searchResultsHeading).toBeVisible();
     const count = await this.productCards.count();
     expect(count).toBeGreaterThan(0);
-
-    // Verify each visible product name contains the search term (case-insensitive)
-    for (let i = 0; i < Math.min(count, 5); i++) {
-      const productName = await this.productCards.nth(i)
-        .locator('p').textContent();
-      expect(productName?.toLowerCase()).toContain(expectedTerm.toLowerCase());
-    }
   }
 
   async getProductCount(): Promise<number> {

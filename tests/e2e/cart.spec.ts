@@ -20,8 +20,9 @@ test.describe('Shopping Cart', () => {
     await productsPage.productCards.first().hover();
     await productsPage.addFirstProductToCart();
 
-    // Dismiss modal and go to cart
-    await page.locator('#cartModal .btn-success').click();
+    // Click View Cart in modal to navigate to cart page
+    await page.locator('#cartModal').getByRole('link', { name: 'View Cart' }).click();
+    await page.waitForURL('**/view_cart**');
 
     // Verify cart has items
     await cartPage.verifyCartHasItems();
@@ -31,7 +32,8 @@ test.describe('Shopping Cart', () => {
     await productsPage.goto();
     await productsPage.productCards.first().hover();
     await productsPage.addFirstProductToCart();
-    await page.locator('#cartModal .btn-success').click();
+    await page.locator('#cartModal').getByRole('link', { name: 'View Cart' }).click();
+    await page.waitForURL('**/view_cart**');
 
     const quantities = cartPage.cartProductQuantities;
     const count = await quantities.count();
@@ -46,7 +48,8 @@ test.describe('Shopping Cart', () => {
     await productsPage.goto();
     await productsPage.productCards.first().hover();
     await productsPage.addFirstProductToCart();
-    await page.locator('#cartModal .btn-success').click();
+    await page.locator('#cartModal').getByRole('link', { name: 'View Cart' }).click();
+    await page.waitForURL('**/view_cart**');
 
     // Now remove it
     const initialCount = await cartPage.getCartItemCount();
@@ -68,7 +71,8 @@ test.describe('Shopping Cart', () => {
     await productsPage.goto();
     await productsPage.productCards.first().hover();
     await productsPage.addFirstProductToCart();
-    await page.locator('#cartModal .btn-success').click();
+    await page.locator('#cartModal').getByRole('link', { name: 'View Cart' }).click();
+    await page.waitForURL('**/view_cart**');
     await expect(cartPage.proceedToCheckoutButton).toBeVisible();
   });
 

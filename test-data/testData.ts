@@ -16,7 +16,7 @@ export const users = {
     name: 'Invalid User',
   },
   existingEmail: {
-    email: 'already.registered@test.com',
+    email: 'test.qa.portfolio@gmail.com', // same as valid.email — confirmed registered on the site
     name: 'Existing User',
   },
 };

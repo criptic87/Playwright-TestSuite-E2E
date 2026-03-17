@@ -22,7 +22,7 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    this.navbar = page.locator('#header .navbar');
+    this.navbar = page.locator('#header .navbar-nav');
     this.logo = page.locator('#header .logo img');
     this.navHome = page.getByRole('link', { name: 'Home' });
     this.navProducts = page.getByRole('link', { name: ' Products' });
